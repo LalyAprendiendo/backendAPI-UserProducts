@@ -5,12 +5,17 @@ class UserController {
   async getAll() {
     return await getAll();
   }
+
   async getById(id: number | string) {
     if (!id) {
       return Messages.MISSING_DATA;
     }
+
+    console.log(id);
+    
     return await getById(id);
   }
+
   async getByEmail(email: string) {
     if (!email) {
       return Messages.MISSING_DATA;
@@ -22,6 +27,8 @@ class UserController {
 }
 
 const users = new UserController();
+
+// users => { getAll: ()=>{}, getById: ()=>{} }
 
 const { getAll: allUsers, getById: idUsers, getByEmail: usersEmail } = users;
 

@@ -10,7 +10,10 @@ class UserModel {
 
   async getById(id: number | string) {
     const users = await this.getAll();
+    console.log(users);
+    
     const searchedUser = users.find((user) => user.id == id);
+
     return searchedUser;
   }
   async getByEmail(email: string) {
